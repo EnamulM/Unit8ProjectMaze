@@ -2,8 +2,19 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.File;
-
 public class MazeSolver {
+    private int rows;
+    private int columns;
+    private String[][] maze;
+    public MazeSolver(String[][] maze, int columns, int rows){
+        this.maze = maze;
+        this.columns = columns;
+        this.rows = rows;
+        rows = maze.length;
+        columns = maze[0].length;
+
+    }
+
     public static String[][] getMaze(String fileName) {
         File f = new File(fileName);
         Scanner s = null;

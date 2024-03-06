@@ -8,20 +8,20 @@ public class Main {
 
     }
 
-    public static String[] traverseMaze(String[][] maze) {
+    public static ArrayList traverseMaze(String[][] maze) {
         String move = ".";
         int rows = maze.length;
         int columns = maze[0].length;
-        String[] path = new String[rows * columns];
+        ArrayList path = new ArrayList(0);
         for (int i = 0; i < rows; i++) {
             for (int r = 0; r < columns; r++) {
                 if (maze[i][r].equals(move)) {
-                    path[i] = ("(" + i + ", " + r +  ")" + ", ");
+                    path.add(("(" + i + ", " + r +  ")" + ", "));
                 }
             }
         }
-        for(int i = 0; i < path.length; i++){
-            System.out.print(path[i]);
+        for(int i = 0; i < path.size(); i++){
+            System.out.print(path.get(i));
         }
         return path;
     }
