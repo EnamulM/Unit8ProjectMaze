@@ -9,7 +9,7 @@ public class Main {
         if (path != null) {
             System.out.println("Solution Path: ");
             for (String coordinate : path) {
-                System.out.print(coordinate + "--> ");
+                System.out.print(coordinate + " --> ");
             }
             }
         else{

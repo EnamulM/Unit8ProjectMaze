@@ -60,6 +60,21 @@ public class MazeSolver {
         }
         return path;
     }
-
-
+    public boolean solveMaze(int x, int y, ArrayList<String> path){
+        if (x == rows - 1 && y == columns - 1) {
+            path.add("(" + x + ", " + y + ")");
+            return true;
+        }
+        maze[x][y] = "X";
+        //Move East
+        if (y + 1 < columns && maze[x][y + 1].equals(".")) {
+            path.add("(" + x + ", " + y + ")");
+            if (solveMaze(x, y + 1, path)) {
+                return true;
+            }
+            path.remove(path.size() - 1);
+        }
+        return false;
+    }
 }
+
