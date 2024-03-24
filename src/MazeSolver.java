@@ -42,23 +42,11 @@ public class MazeSolver {
         return maze;
     }
     public ArrayList<String> traverseMaze() {
-        String move = ".";
-        String wall = "#";
-        int rows = maze.length;
-        int columns = maze[0].length;
-        ArrayList path = new ArrayList(0);
-        for (int i = 0; i < rows; i++) {
-            for (int r = 0; r < columns; r++) {
-                if (maze[i][r].equals(move)) {
-                    path.add(("(" + i + ", " + r +  ")" + ""));
-
-                }
-            }
+        ArrayList<String> solution = new ArrayList<>();
+        if (solveMaze(0, 0, solution)){
+            return solution;
         }
-        for(int i = 0; i < path.size(); i++){
-            System.out.print(path.get(i));
-        }
-        return path;
+        return null;
     }
     public boolean solveMaze(int x, int y, ArrayList<String> path){
         if (x == rows - 1 && y == columns - 1) {

@@ -11,6 +11,7 @@ public class Main {
             for (String coordinate : path) {
                 System.out.print(coordinate + " --> ");
             }
+            System.out.println("Done!");
             }
         else{
             System.out.print("Error! No solution found");
