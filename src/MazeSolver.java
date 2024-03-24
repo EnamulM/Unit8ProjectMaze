@@ -6,12 +6,10 @@ public class MazeSolver {
     private int rows;
     private int columns;
     private String[][] maze;
-    public MazeSolver(String[][] maze, int columns, int rows){
+    public MazeSolver(String[][] maze){
         this.maze = maze;
-        this.columns = columns;
-        this.rows = rows;
-        rows = maze.length;
-        columns = maze[0].length;
+        this.columns = maze[0].length;
+        this.rows = maze.length;
 
     }
 
@@ -42,7 +40,25 @@ public class MazeSolver {
             }
         }
         return maze;
+    }
+    public ArrayList<String> traverseMaze() {
+        String move = ".";
+        String wall = "#";
+        int rows = maze.length;
+        int columns = maze[0].length;
+        ArrayList path = new ArrayList(0);
+        for (int i = 0; i < rows; i++) {
+            for (int r = 0; r < columns; r++) {
+                if (maze[i][r].equals(move)) {
+                    path.add(("(" + i + ", " + r +  ")" + ""));
 
+                }
+            }
+        }
+        for(int i = 0; i < path.size(); i++){
+            System.out.print(path.get(i));
+        }
+        return path;
     }
 
 
