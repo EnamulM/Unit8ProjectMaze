@@ -74,6 +74,30 @@ public class MazeSolver {
             }
             path.remove(path.size() - 1);
         }
+        // Move North
+        if (x - 1 >= 0 && maze[x - 1][y].equals(".")) {
+            path.add("(" + x + ", " + y + ")");
+            if (solveMaze(x - 1, y, path)) {
+                return true;
+            }
+            path.remove(path.size() - 1);
+        }
+        //Move West
+        if (y - 1 >= 0 && maze[x][y - 1].equals(".")) {
+            path.add("(" + x + ", " + y + ")");
+            if (solveMaze(x, y - 1, path)) {
+                return true;
+            }
+            path.remove(path.size() - 1);
+        }
+        //Move South
+        if (x + 1 < rows && maze[x + 1][y].equals(".")) {
+            path.add("(" + x + ", " + y + ")");
+            if (solveMaze(x + 1, y, path)) {
+                return true;
+            }
+            path.remove(path.size() - 1);
+        }
         return false;
     }
 }
